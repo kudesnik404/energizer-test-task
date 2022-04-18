@@ -98,14 +98,10 @@
           </div>
           <div class="offer-card-plan">
             <p class="offer-card-plan_choose-your-plan">Choose your plan:</p>
-            <select>
-              <option value="51">
-                <p>
-                  <span class="number-of-devices">Devices,</span> 1 Year
+            <div class="offer-card-plan_options">
+                  <b>5 Devices,</b> 1 Year
                   <span class="price">$39.99</span>
-                </p>
-              </option>
-            </select>
+            </div>
             <p class="offer-card-plan_protect-more-devices">
               Protect more devices
             </p>
@@ -122,8 +118,8 @@
             <div class="offer-card-plan_auto-renewal">
               <input
                 type="checkbox"
+                class="custom-checkbox checked-ckeckbox"
                 checked
-                class="custom-checkbox"
                 id="checkbox"
               /><label for="checkbox">Auto Renewal</label>
               <img src="src/images/other/Info_Icon_Darker_Grey.svg" />
@@ -173,14 +169,10 @@
           </div>
           <div class="offer-card-plan">
             <p class="offer-card-plan_choose-your-plan">Choose your plan:</p>
-            <select>
-              <option value="51">
-                <p>
-                  <span class="number-of-devices">Devices,</span> 1 Year
-                  <span class="price">$49.99</span>
-                </p>
-              </option>
-            </select>
+            <div class="offer-card-plan_options">
+              <b>5 Devices,</b> 1 Year
+              <span class="price">$39.99</span>
+        </div>
             <p class="offer-card-plan_protect-more-devices">
               Protect more devices
             </p>
@@ -245,14 +237,10 @@
           </div>
           <div class="offer-card-plan">
             <p class="offer-card-plan_choose-your-plan">Choose your plan:</p>
-            <select>
-              <option value="51">
-                <p>
-                  <span class="number-of-devices">Devices,</span> 1 Year
-                  <span class="price">$29.99</span>
-                </p>
-              </option>
-            </select>
+            <div class="offer-card-plan_options">
+              <b>5 Devices,</b> 1 Year
+              <span class="price">$39.99</span>
+            </div>
             <p class="offer-card-plan_protect-more-devices">
               Protect more devices
             </p>
@@ -271,8 +259,8 @@
                 type="checkbox"
                 checked
                 class="custom-checkbox"
-                id="checkbox"
-              /><label for="checkbox">Auto Renewal</label>
+                id="checkbox">
+                <label for="checkbox">Auto Renewal</label>
               <img src="src/images/other/Info_Icon_Darker_Grey.svg" />
             </div>
           </div>
@@ -282,20 +270,21 @@
     <section class="faq">
       <div class="faq_container">
         <div class="faq_header">
-          <h2>Frequently Asked Questions</h2>
+          <h2 class="hidden">Frequently Asked Questions</h2>
+          <h2 class="shown">System Requirements</h2>
           <div class="faq_radio-button">
             <div class="faq_radio-button-active">FAQ</div>
             <div class="faq_radio-button-inactive">System Requirements</div>
           </div>
         </div>
-        <div class="faq_main">
+        <div class="faq_main shown">
           <div class="faq_main_card">
             <div class="faq_main_card_button show-more-button"></div>
             <div class="faq_main_card_QA">
                 <div class="faq_main_card_question">
                     How many devices can I protect?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
                   amet, consectetur.
                 </div>
@@ -307,7 +296,7 @@
                 <div class="faq_main_card_question">
                     Will I get the latest version?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
                   amet, consectetur. Lorem ipsum dolor sit amet, consectetur elit adipiscing elit
                   elit elit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
@@ -321,7 +310,7 @@
                 <div class="faq_main_card_question">
                     How quickly can I start using the software?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
                   amet, consectetur.
                 </div>
@@ -333,7 +322,7 @@
                 <div class="faq_main_card_question">
                     How do I download and install the software?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   You download the software straight from our website. Simply complete your payment order and the download link will appear on the order confirmation page. The same download link will ...
                 </div>
             </div>
@@ -344,7 +333,7 @@
                 <div class="faq_main_card_question">
                     What type of encryption is used in Kaspersky VPN?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
                   amet, consectetur. Lorem ipsum dolor sit amet, consectetur elit adipiscing elit
                   elit elit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
@@ -358,7 +347,7 @@
                 <div class="faq_main_card_question">
                     What server locations are offered by Kaspersky VPN?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
                   amet, consectetur. Lorem ipsum dolor sit amet, consectetur elit adipiscing elit
                   elit elit. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
@@ -372,12 +361,16 @@
                 <div class="faq_main_card_question">
                     Lorem ipsum is placeholder text commonly used?
                 </div>
-                <div class="faq_main_card_answer hidden-answer">
+                <div class="faq_main_card_answer hidden">
                   Lorem ipsum dolor sit amet, consectetur.
                 </div>
             </div>
           </div>
-          </div>
+        
+        </div>
+        <div class="sys-req_main hidden">
+
+        </div>
         </div>
       </div>
     </section>

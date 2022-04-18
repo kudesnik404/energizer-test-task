@@ -5,19 +5,31 @@ function initFAQ() {
 
   for (let i = 0; i < 7; i++) {
     card[i].addEventListener("mousedown", () => {
-      if (answer[i].classList.contains("shown-answer")) {
-        answer[i].classList.remove("shown-answer");
-        answer[i].classList.add("hidden-answer");
-        faqButton[i].classList.remove("show-less-button");
-        faqButton[i].classList.add("show-more-button");
-      } else {
-        answer[i].classList.remove("hidden-answer");
-        answer[i].classList.add("shown-answer");
+      if (answer[i].classList.contains("hidden")) {
+        answer[i].classList.remove("hidden");
         faqButton[i].classList.remove("show-more-button");
         faqButton[i].classList.add("show-less-button");
+      } else {
+        answer[i].classList.add("hidden");
+        faqButton[i].classList.remove("show-less-button");
+        faqButton[i].classList.add("show-more-button");
       }
     });
   }
 }
+// function initCheckbox() {
+//   const checkboxes = document.querySelectorAll("#checkbox");
+//   for (let i = 0; i < 3; i++) {
+//     checkboxes[i].addEventListener("click", () => {
+//       console.log(checkboxes[i]);
+//       checkboxes[i].classList.toggle("checked-ckeckbox")
+//     })
+//   }
 
-window.addEventListener("load", initFAQ);
+
+// }
+
+window.addEventListener("load", () => {
+  initFAQ();
+  initCheckbox();
+});

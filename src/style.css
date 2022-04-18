@@ -93,6 +93,8 @@ header {
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
+  margin-top: 26px;
+  margin-bottom: 29px;
 }
 
 .divider {
@@ -296,22 +298,23 @@ header {
   margin-bottom: 10px;
 }
 
-.offer-card-plan select {
+.offer-card-plan_options {
   width: 312px;
   height: 48px;
   padding-left: 13px;
   border: 1.5px solid #cccccc;
   border-bottom: 2px solid #23d1ae;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
   background: url("images/other/View_More_Button.svg") no-repeat right #ffffff;
   background-position-x: calc(100% - 12px);
   margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
 }
 
-.number-of-devices {
-  font-weight: 700;
+.offer-card-plan_options span {
+  margin-left: 92px;
 }
 
 .offer-card-plan_protect-more-devices,
@@ -426,10 +429,10 @@ header {
   border: transparent;
 }
 
-.custom-checkbox:active ~ label::before {
+/* .custom-checkbox:active ~ label::before {
   background-color: #00a88e;
   border-color: #00a88e;
-}
+} */
 
 .offer-card:nth-child(2) {
   height: 752px;
@@ -575,6 +578,7 @@ header {
 }
 
 .faq_main_card_answer {
+  display: block;
   font-weight: 300;
   font-size: 21px;
   line-height: 28px;
@@ -584,13 +588,15 @@ header {
   margin-bottom: 26px;
 }
 
-.hidden-answer {
+.hidden {
   display: none;
 }
 
-.shown-answer {
+/* .shown {
   display: block;
-}
+} */
+
+
 
 /* footer */
 
@@ -669,12 +675,14 @@ footer {
 
 .footer_side_links img:hover,
 .footer_side_button:hover,
+header img:hover,
 header button:hover,
 .footer_main button:hover,
 .terms-conditions-link:hover,
-.offer-card-plan button,
-.faq_radio-button-inactive,
-.faq_main_card {
+.offer-card-plan button:hover,
+.faq_radio-button-inactive:hover,
+.faq_main_card:hover,
+.offer-card-plan_options:hover {
   cursor: pointer;
 }
 
