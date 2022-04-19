@@ -33,8 +33,8 @@ function FAQtoggle() {
           button.children[0].classList.remove("faq_radio-button-active");
           header.children[1].classList.remove("hidden");
           header.children[0].classList.add("hidden");
-          sysReqMain.classList.remove("hidden")
-          faqMain.classList.add("hidden") 
+          sysReqMain.classList.remove("hidden");
+          faqMain.classList.add("hidden");
         } else {
           button.children[0].classList.add("faq_radio-button-active");
           button.children[0].classList.remove("faq_radio-button-inactive");
@@ -42,33 +42,25 @@ function FAQtoggle() {
           button.children[1].classList.remove("faq_radio-button-active");
           header.children[0].classList.remove("hidden");
           header.children[1].classList.add("hidden");
-          sysReqMain.classList.add("hidden")
-          faqMain.classList.remove("hidden")     
+          sysReqMain.classList.add("hidden");
+          faqMain.classList.remove("hidden");
         }
       }
-  })
+    });
   }
-  
 }
 
-
-
-
-
-// function initCheckbox() {
-//   const checkboxes = document.querySelectorAll("#checkbox");
-//   for (let i = 0; i < 3; i++) {
-//     checkboxes[i].addEventListener("click", () => {
-//       console.log(checkboxes[i]);
-//       checkboxes[i].classList.toggle("checked-ckeckbox")
-//     })
-//   }
-
-
-// }
+function autoRenewal() {
+  const checkboxes = document.querySelectorAll(".auto-renewal_checkbox");
+  for (let i = 0; i < 3; i++) {
+    checkboxes[i].addEventListener("mousedown", () => {
+      checkboxes[i].classList.toggle("checked-checkbox")
+    })
+  }
+}
 
 window.addEventListener("load", () => {
   FAQanswers();
   FAQtoggle();
-  // initCheckbox();
+  autoRenewal();
 });
