@@ -11,7 +11,7 @@ h2 {
 }
 
 body {
-  min-width: 100%;
+  overflow-x: hidden;
 }
 
 header,
@@ -29,7 +29,8 @@ footer {
   width: 1115px;
 }
 
-li, ul {
+li,
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -68,11 +69,12 @@ header {
 .masthead {
   position: absolute;
   top: 0;
-  right: 0;
+  left: calc(50% + 180px);
   z-index: -1;
   width: auto;
   max-width: none;
   height: auto;
+  overflow-x: hidden;
 }
 
 .section-main-info_container {
@@ -443,11 +445,11 @@ header {
   border-color: #00a88e;
 } */
 
- .offer-card-plan_auto-renewal p {
+.offer-card-plan_auto-renewal p {
   color: #444444;
   font-weight: 300;
   margin-left: 4px;
- }
+}
 
 .auto-renewal_checkbox {
   display: flex;
@@ -510,7 +512,6 @@ header {
   height: 830px;
   display: flex;
   align-items: baseline;
-
 }
 
 .faq_container,
@@ -641,7 +642,7 @@ header {
 .sys-req_main {
   margin-top: 66px;
   font-size: 20px;
-  line-height: 28px;  
+  line-height: 28px;
 }
 
 .sys-req_main a {
@@ -665,7 +666,7 @@ header {
   margin-top: 29px;
 }
 
-.sys-req_main .long-divider+div {
+.sys-req_main .long-divider + div {
   margin-top: 30px;
 }
 
@@ -783,14 +784,55 @@ header button:hover,
 
 /* fixing masthead illustration for smaller desktopscreens */
 
-@media (max-width: 1900px) {
+/* @media (max-width: 1900px) {
   .masthead {
     width: 40%;
   }
-}
+} */
 
 /* tablet version */
 
 @media (max-width: 1280px) {
+  .header_container,
+  .section-main-info_container,
+  .section-main-info_container_info,
+  .footer_container,
+  .offers-container,
+  .faq_container {
+    width: 100%;
+  }
 
+  .section-main-info_container {
+    width: calc(100% - 50px);
+    margin: 138px 25px 0 25px;
+  }
+
+  .section-main-info_container_logo {
+    flex-wrap: wrap;
+    width: 370px;
+  }
+  .section-main-info_container_logo p {
+    font-weight: 700;
+    font-size: 40px;
+    margin-left: 16px;
+  }
+
+  #energizer-logo {
+    margin-top: 16px;
+  }
+
+  .section-main-info_container h2 {
+    width: 399px;
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -0.03em;
+  }
+
+  .section-main-info_container_info h3 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .terms-conditions-link {
+    text-decoration: underline;
+  }
 }
