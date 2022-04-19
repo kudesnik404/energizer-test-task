@@ -806,6 +806,7 @@ header button:hover,
     width: calc(100% - 50px);
     margin: 138px 25px 0 25px;
   }
+  
 
   .section-main-info_container_logo {
     flex-wrap: wrap;
