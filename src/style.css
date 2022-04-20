@@ -10,10 +10,6 @@ h2 {
   font-weight: 400;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 header,
 section,
 footer {
@@ -53,11 +49,14 @@ header {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding-left: 25px;
-  padding-right: 25px;
 }
 
-.header_button {
+#navigation-button,
+#cart-button {
+  display: none;
+}
+
+#header_button {
   width: 78px;
   height: 72px;
   background-color: #ffffff;
@@ -70,6 +69,7 @@ header {
 /* main info */
 
 .masthead {
+  display: block;
   position: absolute;
   top: 0;
   left: calc(50% + 180px);
@@ -77,6 +77,12 @@ header {
   width: auto;
   max-width: none;
   height: auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.masthead-phone {
+  display: none;
 }
 
 .section-main-info_container {
@@ -283,8 +289,9 @@ header {
   display: flex;
   align-items: center;
   text-align: center;
-  color: #1d1d1b;
-  margin: 16px;
+  color: #1d1d1b !important;
+  padding: 16px;
+  margin: 0 !important;
 }
 
 .offer-card-info_accounts img:hover ~ div,
@@ -387,7 +394,6 @@ header {
 
 .popup-the-second .offer-card_old-price_popup_info {
   text-align: left;
-
 }
 
 .offer-card-plan_price {
@@ -526,6 +532,7 @@ header {
   font-size: 18px;
   line-height: 22px;
   padding-left: 24px;
+  padding-bottom: 4px;
 }
 
 .offer-card-plan_PS {
@@ -818,6 +825,11 @@ header button:hover,
     width: 100%;
   }
 
+  .header_container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   /* main info */
 
   .masthead {
@@ -939,7 +951,7 @@ header button:hover,
 
   .faq_container {
     width: calc(100% - 48px);
-    margin: 0 27px;
+    padding: 0 27px;
   }
 
   .faq_header {
@@ -987,5 +999,209 @@ header button:hover,
     margin-left: 20px;
     height: 24px;
     width: 24px;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    height: 56px;
+  }
+
+  #header_button {
+    display: none;
+  }
+
+  #navigation-button,
+  #cart-button,
+  #navigation-button img,
+  #cart-button img {
+    display: block;
+    background: none;
+    border: none;
+    align-self: center;
+  }
+
+  .header_container {
+    justify-content: left;
+    padding-left: 20px;
+  }
+
+  .header_container img:nth-child(2) {
+    padding-left: 8px;
+  }
+
+  #cart-button {
+    position: absolute;
+    right: 22px;
+    top: 16px;
+  }
+
+  #cart-button img {
+    width: 22px;
+    height: 20px;
+  }
+
+  .section-main-info {
+    flex-direction: column;
+  }
+
+  .masthead {
+    display: none;
+  }
+
+  .masthead-phone {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section-main-info_container {
+    padding: 0 24px;
+    padding-top: 56px;
+  }
+
+  .section-main-info_container_logo {
+    width: 290px;
+  }
+
+  .section-main-info_container_logo p {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  .img-big-logo {
+    width: 258px;
+    height: 50px;
+  }
+
+  #energizer-logo {
+    width: 246px;
+    height: 62px;
+    margin-top: 13px;
+  }
+
+  .section-main-info_container h2 {
+    width: 312px;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.04em;
+  }
+
+  .section-main-info_container_info h3 {
+    letter-spacing: 0.01em;
+    line-height: 32px;
+  }
+
+  .terms-conditions-link {
+    text-decoration: none;
+  }
+
+  .offers-container {
+    /* width: 1032px; */
+    width: min-content;
+  }
+
+  .offer-card {
+    width: 312px !important;
+    height: 734px !important;
+  }
+
+  .offer-card-plan {
+    height: 434px;
+  }
+
+  .offer-card:nth-child(2) {
+    margin: 0 24px;
+    left: 336px;
+  }
+
+  .offer-card:nth-child(3) {
+    right: 336px;
+  }
+
+  .offers-container {
+    padding: 0 22px;
+  }
+
+  .offer-card-name-headline p,
+  .offer-card-name-headline h4,
+  .offer-card_best-choice-flag {
+    font-weight: 700;
+  }
+
+  .offer-card-name-headline-reviews p {
+    font-weight: 300;
+  }
+
+  .offer-card-plan_options {
+    width: calc(100% - 13px);
+  }
+
+  .offer-card-plan_options .price {
+    margin-left: 50px;
+  }
+
+  .offer-card-info_accounts_popup,
+  .offer-card_old-price_popup {
+    left: 0;
+    width: 312px;
+    height: 76px;
+  }
+
+  .popup-the-second .offer-card_old-price_popup_info {
+    text-align: center;
+  }
+
+  .offer-card_old-price_popup {
+    top: 100px;
+  }
+
+  .offer-card-info_accounts_popup {
+    top: 25px;
+    left: -21px;
+  }
+
+  .offer-card-info_accounts_popup .popup-flag {
+    top: -8px;
+    left: 142px;
+  }
+
+  .offer-card_old-price_popup .popup-flag {
+    top: 65px;
+    left: 182px;
+  }
+
+  .offer-card-plan button {
+    margin-bottom: 16px;
+    width: 260px;
+    height: 56px;
+    font-weight: 400;
+  }
+  .offer-card-plan_PS {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .faq_header h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .faq_main {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .sys-req_main p {
+    width: 100%;
+  }
+
+  .short-link {
+    display: inline;
+  }
+
+  .long-link {
+    display: none;
   }
 }
