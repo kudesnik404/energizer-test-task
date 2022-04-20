@@ -52,6 +52,9 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .header_button {
@@ -74,11 +77,10 @@ header {
   width: auto;
   max-width: none;
   height: auto;
-  overflow-x: hidden;
 }
 
 .section-main-info_container {
-  margin-top: 100px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
 }
@@ -140,7 +142,7 @@ header {
   display: flex;
   justify-content: space-between;
   justify-self: center;
-  margin-top: 93px;
+  padding-top: 93px;
 }
 
 .offer-card {
@@ -246,7 +248,8 @@ header {
   height: 16px;
 }
 
-.offer-card-info_accounts_popup {
+.offer-card-info_accounts_popup,
+.offer-card_old-price_popup {
   position: absolute;
   right: -183px;
   top: -36.6px;
@@ -261,7 +264,7 @@ header {
   visibility: hidden;
 }
 
-#popup-flag {
+.popup-flag {
   background: #ffffff;
   z-index: -1;
   width: 20px;
@@ -272,7 +275,8 @@ header {
   left: -8px;
 }
 
-#offer-card-info_accounts_popup_info {
+.offer-card-info_accounts_popup_info,
+.offer-card_old-price_popup_info {
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
@@ -284,7 +288,9 @@ header {
 }
 
 .offer-card-info_accounts img:hover ~ div,
-.offer-card-info_accounts_popup:hover {
+.offer-card-plan_old-price img:hover ~ div,
+.offer-card-info_accounts_popup:hover ~ div,
+.offer-card_old-price_popup:hover {
   visibility: visible;
 }
 
@@ -353,7 +359,7 @@ header {
   align-items: center;
 }
 
-.offer-card-plan_old-price p {
+.offer-card-plan_old-price p:first-child {
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.04em;
@@ -366,6 +372,22 @@ header {
   width: 15.5px;
   height: 15.8px;
   margin-left: 6px;
+}
+
+.popup-the-second {
+  width: 237px;
+  height: 131px;
+  right: -110px;
+  top: 155px;
+}
+
+.popup-the-second .popup-flag {
+  top: 30px;
+}
+
+.popup-the-second .offer-card_old-price_popup_info {
+  text-align: left;
+
 }
 
 .offer-card-plan_price {
@@ -479,6 +501,7 @@ header {
 .offer-card:nth-child(2) {
   height: 752px;
   top: -40px;
+  z-index: 3;
 }
 
 .offer-card:nth-child(3) {
@@ -495,6 +518,7 @@ header {
   left: -11px;
   display: flex;
   align-items: center;
+  z-index: 10;
 }
 
 .offer-card_best-choice-flag div {
@@ -502,6 +526,10 @@ header {
   font-size: 18px;
   line-height: 22px;
   padding-left: 24px;
+}
+
+.offer-card-plan_PS {
+  display: none;
 }
 
 /* FAQ */
@@ -578,7 +606,7 @@ header {
 }
 
 .faq_main {
-  margin-top: 48px;
+  padding-top: 48px;
 }
 
 .faq_main_card {
@@ -590,7 +618,7 @@ header {
 .faq_main_card_QA {
   display: flex;
   flex-direction: column;
-  margin-left: 59px;
+  padding-left: 59px;
   width: 1013px;
 }
 
@@ -617,7 +645,6 @@ header {
 }
 
 .faq_main_card_question {
-  font-weight: 400;
   font-size: 21px;
   line-height: 24px;
 }
@@ -691,7 +718,7 @@ footer {
 .footer_container {
   display: flex;
   flex-direction: row;
-  padding-top: 25px;
+  margin-top: 25px;
   justify-content: space-between;
 }
 
@@ -782,31 +809,30 @@ header button:hover,
   cursor: pointer;
 }
 
-/* fixing masthead illustration for smaller desktopscreens */
-
-/* @media (max-width: 1900px) {
-  .masthead {
-    width: 40%;
-  }
-} */
-
 /* tablet version */
 
 @media (max-width: 1280px) {
   .header_container,
-  .section-main-info_container,
   .section-main-info_container_info,
-  .footer_container,
-  .offers-container,
-  .faq_container {
+  .footer_container {
     width: 100%;
+  }
+
+  /* main info */
+
+  .masthead {
+    top: 24px;
+    height: 492px;
+    width: auto;
+    left: calc(50% + 20px);
+    overflow-x: hidden;
   }
 
   .section-main-info_container {
     width: calc(100% - 50px);
-    margin: 138px 25px 0 25px;
+    padding-top: 138px;
+    padding-bottom: 25px;
   }
-  
 
   .section-main-info_container_logo {
     flex-wrap: wrap;
@@ -833,7 +859,133 @@ header button:hover,
     font-size: 24px;
     line-height: 30px;
   }
+
   .terms-conditions-link {
     text-decoration: underline;
+  }
+
+  /* offers */
+
+  .offers {
+    position: absolute;
+    padding-top: 101px;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .offers::-webkit-scrollbar {
+    display: none;
+  }
+
+  .offers-container {
+    display: inline-flex;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    padding: 0 207px;
+  }
+
+  .offer-card {
+    top: 0 !important;
+    height: 735px !important;
+    user-select: none;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+  }
+
+  .offer-card-name {
+    margin-top: 26px !important;
+  }
+
+  .grabbing .offer-card {
+    transform: scale(0.9);
+  }
+
+  .offer-card_best-choice-flag {
+    top: -40px;
+  }
+
+  .offer-card:nth-child(2) {
+    margin: 0 35px;
+    left: 385px;
+  }
+
+  .offer-card:nth-child(3) {
+    right: 385px;
+  }
+
+  .offer-card-name-headline_personal {
+    display: none;
+  }
+
+  .offer-card-plan_PS {
+    display: block;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: #666666;
+    margin-top: 10px;
+  }
+
+  /* FAQ */
+
+  .faq {
+    margin-top: 990px;
+  }
+
+  .faq_container {
+    width: calc(100% - 48px);
+    margin: 0 27px;
+  }
+
+  .faq_header {
+    flex-direction: column;
+    margin: 0 2px;
+  }
+
+  .faq_radio-button {
+    margin-top: 40px;
+  }
+
+  .faq_main_card_QA {
+    margin-left: 24px;
+    width: 625px;
+  }
+
+  /* footer */
+
+  footer {
+    height: 173px;
+  }
+
+  .footer_container {
+    margin-left: 24px;
+  }
+
+  .footer_main {
+    width: 428px;
+  }
+
+  .footer_main button {
+    line-height: 12px;
+    margin-bottom: 8.8px;
+  }
+
+  .footer_side {
+    margin-right: 24px;
+  }
+
+  .footer_side_links {
+    margin-right: 3px;
+  }
+
+  .footer_side_links img {
+    margin-left: 20px;
+    height: 24px;
+    width: 24px;
   }
 }
